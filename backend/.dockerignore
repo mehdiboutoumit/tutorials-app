@@ -1,0 +1,25 @@
+
+
+# Ignore IDE-specific files and directories
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Ignore build-related files
+*.jar
+*.war
+*.ear
+
+# Ignore Docker-related files
+.dockerignore
+.docker/
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.*.yml
+Dockerfile*
+
+# Ignore logs and temporary files
+*.log
+*.log.*
+*.swp

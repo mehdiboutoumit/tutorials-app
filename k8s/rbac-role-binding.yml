@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: exam-resource-role-binding
+  namespace: exam
+subjects:
+- kind: User
+  name: "mehdiboutoumit"  
+  apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: Role 
+  name: exam-resource-role
+  apiGroup: rbac.authorization.k8s.io

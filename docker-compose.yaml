@@ -1,0 +1,41 @@
+version: '3.9'
+services:
+  mysql:
+    image: "mysql"
+    container_name: mysqlcontainer
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: testdb
+    ports:
+      - "3306:3306"
+    networks:
+      - myNET
+    volumes:
+      - mysqlvol:/var/lib/mysql
+
+  backend:
+    image: "mehdiboutoumit/tutorials-app:spring-backend"
+    container_name: backend
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    networks:
+      - myNET
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
+
+  frontend:
+    image: "mehdiboutoumit/tutorials-app:angular-frontend"
+    container_name: frontend 
+    networks:
+      - myNET
+    ports:
+      - "8081:80"
+    depends_on:
+      - backend
+volumes:
+  mysqlvol:
+    driver: local
+networks:
+  myNET: {}

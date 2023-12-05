@@ -1,0 +1,26 @@
+apiVersion: skaffold/v4beta8
+kind: Config
+metadata:
+  name: tutorials-app
+build:
+  artifacts:
+    - image: angular-frontend
+      context: frontend
+      docker:
+        dockerfile: Dockerfile
+    - image: spring-backend
+      context: backend
+      docker:
+        dockerfile: Dockerfile
+manifests:
+  rawYaml:
+    - k8s/angular-frontend.yml
+    - k8s/disruption-budget.yml
+    - k8s/exam-namespace.yml
+    - k8s/ingress.yml
+    - k8s/mysql-cluster.yml
+    - k8s/mysql-secret.yml
+    - k8s/mysql.yml
+    - k8s/rbac-role-binding.yml
+    - k8s/rbac-role.yml
+    - k8s/spring-backend.yml
