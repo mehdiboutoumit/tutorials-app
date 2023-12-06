@@ -24,7 +24,7 @@ Before you begin, ensure you have the following installed:
 1. Clone this repository:
 
     ```bash
-    git clone https://github.com/your-username/tutorials-app.git
+    git clone https://github.com/mehdiboutoumit/tutorials-app.git
     cd tutorials-app
     ```
 
